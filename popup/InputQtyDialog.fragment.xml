@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:bar="sap.ndc" xmlns:f="sap.ui.layout.form"
+	xmlns:uitable="sap.ui.table">
+	<Dialog title="{i18n>titleInputQty}" verticalScrolling="true" afterClose="fnAfterCloseDialog">
+		<content>
+			<Table id="vIdInputQtyTable" items="{InputQtyModel>/}" inset="false">
+				<columns>
+					<Column width="12em" hAlign="Center">
+						<Text text="{i18n>labelPIDocument}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelMaterial}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelEAN}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelSLOC}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelBookQTY}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelUnitBook}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelInputQty}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelUnitOfQty}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<ObjectIdentifier text="{InputQtyModel>ScanPIDoc}"/>
+							<Text text="{InputQtyModel>ScanMaterialDesc}"/>
+							<Text text="{InputQtyModel>ScanEAN}{InputQtyModel>ScanEANText}"/>
+							<Text text="{InputQtyModel>ScanSLOC}"/>
+							<Text text=" {path: 'InputQtyModel>ScanBookQty', type: 'sap.ui.model.type.Float', formatOptions: {decimals: 3, maxFractionDigits: 3}} "/>
+							<Text text="{InputQtyModel>ScanBookUnit}"/>
+							
+							<Input value="{parts:[{path : 'InputQtyModel>ScanInputQty'}], formatter : '.formatter.fnAddcomma'}"
+								change="fnOnChangeInputQTY"/>
+							<Text text="{InputQtyModel>ScanInputUnit}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="{i18n>btnOK}" type="Accept" press="fnOnPressOKInputQtyBtn"/>
+			<Button text="{i18n>btnCancel}" type="Reject" press="fnOnPressCancelInputQtyBtn"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,23 @@
+<mvc:View controllerName="ZMMXE00002.controller.MainPage" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page>
+				<content>
+					<core:Fragment fragmentName="ZMMXE00002.fragment.SearchCriteriaForm" type="XML"/>
+					<Panel id="vIdPanelPIDocument" expandable="true" headerText="{i18n>titlePIDocument}" expanded="true" width="auto" class="sapUiResponsiveMargin">
+						<content>
+							<core:Fragment fragmentName="ZMMXE00002.fragment.PIDocumentTable" type="XML"/>
+						</content>
+					</Panel>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button id="vIdPostBtn" type="Emphasized" text="{i18n>btnPost}" enabled="true" press="fnOnPressPostBtn"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

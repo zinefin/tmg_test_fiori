@@ -1,0 +1,87 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZMMXE00000_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="SearchHelp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Key01"/>
+                    <PropertyRef Name="Key02"/>
+                    <PropertyRef Name="Key03"/>
+                </Key>
+                <Property Name="Key01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Key02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Key03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="SearchHelpToChild" Relationship="ZMMXE00000_SRV.SearchHelpToChild" FromRole="FromRole_SearchHelpToChild" ToRole="ToRole_SearchHelpToChild"/>
+            </EntityType>
+            <EntityType Name="SearchHelpChild" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Key01"/>
+                    <PropertyRef Name="Key02"/>
+                    <PropertyRef Name="Key03"/>
+                </Key>
+                <Property Name="Key01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Key02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Key03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Help" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ActionParameter"/>
+                </Key>
+                <Property Name="ActionParameter" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="HelpPlant" Relationship="ZMMXE00000_SRV.HelpPlant" FromRole="FromRole_HelpPlant" ToRole="ToRole_HelpPlant"/>
+                <NavigationProperty Name="HelpSLOC" Relationship="ZMMXE00000_SRV.HelpSLOC" FromRole="FromRole_HelpSLOC" ToRole="ToRole_HelpSLOC"/>
+                <NavigationProperty Name="HelpPIDoc" Relationship="ZMMXE00000_SRV.HelpPIDoc" FromRole="FromRole_HelpPIDoc" ToRole="ToRole_HelpPIDoc"/>
+            </EntityType>
+            <Association Name="SearchHelpToChild" sap:content-version="1">
+                <End Type="ZMMXE00000_SRV.SearchHelp" Multiplicity="0..1" Role="FromRole_SearchHelpToChild"/>
+                <End Type="ZMMXE00000_SRV.SearchHelpChild" Multiplicity="*" Role="ToRole_SearchHelpToChild"/>
+            </Association>
+            <Association Name="HelpPIDoc" sap:content-version="1">
+                <End Type="ZMMXE00000_SRV.Help" Multiplicity="0..1" Role="FromRole_HelpPIDoc"/>
+                <End Type="ZMMXE00000_SRV.SearchHelp" Multiplicity="*" Role="ToRole_HelpPIDoc"/>
+            </Association>
+            <Association Name="HelpSLOC" sap:content-version="1">
+                <End Type="ZMMXE00000_SRV.Help" Multiplicity="0..1" Role="FromRole_HelpSLOC"/>
+                <End Type="ZMMXE00000_SRV.SearchHelp" Multiplicity="*" Role="ToRole_HelpSLOC"/>
+            </Association>
+            <Association Name="HelpPlant" sap:content-version="1">
+                <End Type="ZMMXE00000_SRV.Help" Multiplicity="0..1" Role="FromRole_HelpPlant"/>
+                <End Type="ZMMXE00000_SRV.SearchHelp" Multiplicity="*" Role="ToRole_HelpPlant"/>
+            </Association>
+            <EntityContainer Name="ZMMXE00000_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SearchHelpSet" EntityType="ZMMXE00000_SRV.SearchHelp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SearchHelpChildSet" EntityType="ZMMXE00000_SRV.SearchHelpChild" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="HelpSet" EntityType="ZMMXE00000_SRV.Help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="HelpPlantSet" Association="ZMMXE00000_SRV.HelpPlant" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="HelpSet" Role="FromRole_HelpPlant"/>
+                    <End EntitySet="SearchHelpSet" Role="ToRole_HelpPlant"/>
+                </AssociationSet>
+                <AssociationSet Name="HelpPIDocSet" Association="ZMMXE00000_SRV.HelpPIDoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="HelpSet" Role="FromRole_HelpPIDoc"/>
+                    <End EntitySet="SearchHelpSet" Role="ToRole_HelpPIDoc"/>
+                </AssociationSet>
+                <AssociationSet Name="SearchHelpToChildSet" Association="ZMMXE00000_SRV.SearchHelpToChild" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SearchHelpSet" Role="FromRole_SearchHelpToChild"/>
+                    <End EntitySet="SearchHelpChildSet" Role="ToRole_SearchHelpToChild"/>
+                </AssociationSet>
+                <AssociationSet Name="HelpSLOCSet" Association="ZMMXE00000_SRV.HelpSLOC" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="HelpSet" Role="FromRole_HelpSLOC"/>
+                    <End EntitySet="SearchHelpSet" Role="ToRole_HelpSLOC"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://wdifid.themall.co.th/sap/opu/odata/sap/ZMMXE00000_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://wdifid.themall.co.th/sap/opu/odata/sap/ZMMXE00000_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

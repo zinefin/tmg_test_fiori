@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Table id="vIdPIDocumentTable" inset="false" items="{TableItems>/PIItems}" mode="Delete" delete="fnOnPressDeleteBtn">
+		<columns>
+			<Column width="12em" hAlign="Center">
+				<Text text="{i18n>labelMatCode}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+				<Text text="{i18n>labelDescription}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+				<Text text="{i18n>labelEAN}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+				<Text text="{i18n>labelPlant}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+				<Text text="{i18n>labelSLOC}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+				<Text text="{i18n>labelCount}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+				<Text text="{i18n>labelBookQTY}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+				<Text text="{i18n>labelDiffQTY}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+				<Text text="{i18n>labelStatus}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<ObjectIdentifier text="{TableItems>Material}"/>
+					<Text text="{TableItems>MaterialDesc}"/>
+					<Text text="{TableItems>EAN}"/>
+					<Text text="{TableItems>Plant} {TableItems>PlantDesc}"/>
+					<Text text="{TableItems>SLOC} {TableItems>SLOCDesc}"/>
+					<Text text="{path: 'TableItems>CountQty', type: 'sap.ui.model.type.Float', formatOptions: {decimals: 3, maxFractionDigits: 3}} {TableItems>CountUnit}"/>
+					<Text text="{path: 'TableItems>BookQty', type: 'sap.ui.model.type.Float', formatOptions: {decimals: 3, maxFractionDigits: 3}} {TableItems>BookUnit}"/>
+					<Text text="{path: 'TableItems>DiffQty', type: 'sap.ui.model.type.Float', formatOptions: {decimals: 3, maxFractionDigits: 3}} {TableItems>DiffUnit}"/>
+					<ObjectStatus class="sapUiSmallMarginBottom" text="{TableItems>Status}"
+						state="{parts:[{path : 'TableItems>Status'}], formatter : '.formatter.fnCheckStatus'}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

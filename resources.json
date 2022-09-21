@@ -1,0 +1,75 @@
+{
+    "resources": [
+        {
+            "name": "localService/ZMMXE00002_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "fragment/SearchCriteriaForm.fragment.xml"
+        },
+        {
+            "name": "fragment/PIDocumentTable.fragment.xml"
+        },
+        {
+            "name": "util/SearchHelp.js"
+        },
+        {
+            "name": "util/Service.js"
+        },
+        {
+            "name": "util/Formatter.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/MainPage.controller.js"
+        },
+        {
+            "name": "popup/ValueHelpDialog.fragment.xml"
+        },
+        {
+            "name": "popup/InputQtyDialog.fragment.xml"
+        },
+        {
+            "name": "popup/TableMessageDialog.fragment.xml"
+        },
+        {
+            "name": "popup/CountQtyDialog.fragment.xml"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/MainPage.view.xml"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

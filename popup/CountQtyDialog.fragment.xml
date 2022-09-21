@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:bar="sap.ndc" xmlns:f="sap.ui.layout.form"
+	xmlns:uitable="sap.ui.table">
+	<Dialog title="{i18n>titleCountQty}" verticalScrolling="true" afterClose="fnAfterCloseDialog">
+		<content>
+			<Table id="vIdCountQtyTable" items="{CountQtyModel>/}" inset="false">
+				<columns>
+					<Column width="12em" hAlign="Center">
+						<Text text="{i18n>labelPIDocument}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelMaterial}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelEAN}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelBookQTY}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelUnitBook}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelCountQty}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelMaterialEAN}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>labelUnitQty}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<ObjectIdentifier text="{CountQtyModel>ScanPIDoc}"/>
+							<Text text="{CountQtyModel>ScanMaterialDesc}"/>
+							<Text text="{CountQtyModel>ScanEAN}{CountQtyModel>ScanEANText}"/>
+							<Text text=" {path: 'CountQtyModel>ScanBookQty', type: 'sap.ui.model.type.Float', formatOptions: {decimals: 3, maxFractionDigits: 3}} "/>
+							<Text text="{CountQtyModel>ScanBookUnit}"/>
+							<Text text="{path: 'CountQtyModel>ScanInputQty', type: 'sap.ui.model.type.Float', formatOptions: {decimals: 3, maxFractionDigits: 3}}"/>
+							<Input liveChange="fnOnChangeQty"/>
+							<Text text="{CountQtyModel>ScanInputUnit}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="{i18n>btnOK}" type="Accept" press="fnOnPressOKCountQtyBtn"/>
+			<Button text="{i18n>btnCancel}" type="Reject" press="fnOnPressCancelCountQtyBtn"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form">
+	<form:SimpleForm editable="true" layout="ResponsiveGridLayout" title="{i18n>titleInputKey}">
+		<form:content>
+			<Label text="{i18n>labelPIDocument}" required="true">
+				<layoutData>
+					<l:GridData span="L4 M4 S12"/>
+				</layoutData>
+			</Label>
+			<Input id="vIdMultiInputPIDoc" showValueHelp="true" valueHelpOnly="false" valueHelpRequest="fnOnValueHelpDialogPress">
+				<layoutData>
+					<l:GridData span="L6 M6 S12"/>
+				</layoutData>
+			</Input>
+			<Label text="{i18n>labelSLOC}" required="true">
+				<layoutData>
+					<l:GridData span="L4 M4 S12"/>
+				</layoutData>
+			</Label>
+			<Input id="vIddMultiInputSLOC" showValueHelp="true" valueHelpRequest="fnOnValueHelpDialogPress">
+				<layoutData>
+					<l:GridData span="L6 M6 S12"/>
+				</layoutData>
+			</Input>
+			<Label text="{i18n>labelScanMode}" design="Bold">
+				<layoutData>
+					<l:GridData span="L4 M4 S12" linebreak="true"/>
+				</layoutData>
+			</Label>
+			<RadioButtonGroup>
+				<RadioButton id="vIdRadioButtonScanInputQty" text="{i18n>labelInputQty}" selected="true"/>
+				<RadioButton id="vIdRadioButtonCountQty" text="{i18n>labelCountQty}"/>
+				<layoutData>
+					<l:GridData span="L6 M6 S6"/>
+				</layoutData>
+			</RadioButtonGroup>
+			<Label text="{i18n>labelMaterialEAN}">
+				<layoutData>
+					<l:GridData span="L4 M4 S12" linebreak="true"/>
+				</layoutData>
+			</Label>
+			<Input id="vIdMaterial" change="fnOnPressScanChange">
+				<layoutData>
+					<l:GridData span="L5 M5 S10"/>
+				</layoutData>
+			</Input>
+			<Button id="vIdButtonScanBarCode" icon="sap-icon://bar-code" press="fnOnPressScanButton">
+				<layoutData>
+					<l:GridData span="L1 M1 S2"/>
+				</layoutData>
+			</Button>
+		</form:content>
+	</form:SimpleForm>
+</core:FragmentDefinition>

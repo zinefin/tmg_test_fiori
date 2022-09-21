@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
+	<Dialog class="sapUiNoMargin" contentWidth="800px" contentHeight="auto" initialVisiblePanelType="sort" draggable="true" title="Message"
+		showHeader="true" verticalScrolling="false" horizontalScrolling="false">
+		<content>
+			<table:Table visibleRowCount="5" class="sapUiNoContentPadding sapUiTinyMarginTop" showNoData="false" enableCellFilter="false"
+				rows="{Message>/MessageDetail}" selectionMode="None">
+				<table:columns>
+					<table:Column width="10rem" hAlign="Center">
+						<Label text="{Message>/ColumnType}"/>
+						<table:template>
+							<ObjectStatus icon="{parts : [{path : 'Message>Type'}], formatter : '.formatter.fnSetIcon'}"
+								text="{parts : [{path : 'Message>Type'}], formatter : '.formatter.fnSetIconText'}"
+								state="{parts : [{path : 'Message>Type'}], formatter : '.formatter.fnSetIconState'}"/>
+						</table:template>
+					</table:Column>
+					<table:Column hAlign="Center">
+						<Label text="{Message>/ColumnText}"/>
+						<table:template>
+							<Text text="{Message>Text}"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+		</content>
+		<buttons>
+			<Button text="OK" width="10%" press="fnOnTableMessageDialogClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
